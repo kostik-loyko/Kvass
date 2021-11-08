@@ -422,10 +422,6 @@ dd {
 .select-conteiner {
    position: relative;
 }
-.tomato {
-   background-color: tomato;
-}
-
 .select-conteiner .select-arrow {
    position: absolute;
    width: 20px;
@@ -469,17 +465,10 @@ dd {
    width: 100%;
    cursor: pointer;
 }
-.down-list__arrow {
-   position: absolute;
-   width: 20px;
-   height: 10px;
-   right: 15px;
-   top: 50%;
-   transform: translateY(-50%);
-   background-image: url("img/select.png");
-   background-repeat: no-repeat;
-   background-position: center;
-   transition: 1s ease transform;
+.down-list__select--active {
+   background-color: #ffffff;
+   color: #000000;
+   outline: none;
 }
 .down-list__items {
    display: none;
@@ -508,8 +497,20 @@ dd {
 .down-list__item:first-child {
    border-top: 1px solid #e5e5e5;
 }
-.feedback-form-group .down-list__input-hidden {
+.feedback-form-group .down-list__input {
    display: none;
+}
+.down-list__arrow {
+   position: absolute;
+   width: 20px;
+   height: 10px;
+   right: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   background-image: url("img/select.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   transition: 1s ease transform;
 }
 .feedback-form-group textarea {
    height: 80px;
@@ -530,7 +531,7 @@ dd {
    text-transform: uppercase;
    line-height: 60px;
 }
-.checkbox-area .visually-hidden {
+.visually-hidden {
    position: absolute;
    width: 1px;
    height: 1px;
