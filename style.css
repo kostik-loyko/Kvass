@@ -368,7 +368,6 @@ dd {
    min-width: 630px;
 }
 .feedback-form-group input,
-.feedback-form-group select,
 .feedback-form-group textarea {
    display: block;
    height: 50px;
@@ -385,14 +384,12 @@ dd {
    box-sizing: border-box;
 }
 .feedback-form-group input:hover,
-.feedback-form-group select:hover,
 .feedback-form-group textarea:hover,
 .down-list__select:hover,
 .down-list__item:hover {
    background-color: #d9ad66;
 }
 .feedback-form-group input:focus,
-.feedback-form-group select:focus,
 .feedback-form-group textarea:focus,
 .down-list__select:focus {
    background-color: #ffffff;
@@ -418,29 +415,6 @@ dd {
 .feedback-form-group__conteiner .phone,
 .feedback-form-group__conteiner .extraphone {
    width: 100%;
-}
-.select-conteiner {
-   position: relative;
-}
-.select-conteiner .select-arrow {
-   position: absolute;
-   width: 20px;
-   height: 10px;
-   right: 15px;
-   top: 62%;
-   background-image: url("img/select.png");
-   background-repeat: no-repeat;
-   background-position: center;
-   transition: 1s ease transform;
-   pointer-events: none;
-}
-.select-conteiner .select-arrow:hover {
-   transform: rotate(180deg);
-}
-.select {
-   -moz-appearance: none;
-   -webkit-appearance: none;
-   appearance: none;
 }
 .down-list__title {
    font-size: 16px;
@@ -500,17 +474,23 @@ dd {
 .feedback-form-group .down-list__input {
    display: none;
 }
+.down-list {
+   position: relative;
+}
 .down-list__arrow {
    position: absolute;
    width: 20px;
    height: 10px;
    right: 15px;
-   top: 50%;
-   transform: translateY(-50%);
+   top: 55%;
    background-image: url("img/select.png");
    background-repeat: no-repeat;
    background-position: center;
-   transition: 1s ease transform;
+   transition: 0.5s ease transform;
+   pointer-events: none;
+}
+.down-list__arrow--active {
+   transform: rotate(180deg);
 }
 .feedback-form-group textarea {
    height: 80px;

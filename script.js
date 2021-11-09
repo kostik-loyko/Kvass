@@ -1,27 +1,50 @@
-// клик по кнопке открь/закрыть селект
+document.querySelectorAll(".down-list").forEach(function (downList) {
+   const downListSelect = downList.querySelector(".down-list__select");
+   const downListItems = downList.querySelector(".down-list__items");
+   const downListItem = downListItems.querySelectorAll(".down-list__item");
+   const dowListInput = downList.querySelector(".down-list__input");
+   const dowListArrow = downList.querySelector(".down-list__arrow");
 
-document.querySelector(".down-list__select").addEventListener("click", function (event) {
-   event.stopPropagation();
-   document.querySelector(".down-list__items").classList.toggle("down-list__items--active");
-   document.querySelector(".down-list__select").classList.toggle("down-list__select--active");
-})
+   // клик по кнопке открь/закрыть селект
 
-// выбор элемента из спика/ запомнить выбранное значение/ закрыть селект
-
-document.querySelectorAll(".down-list__item").forEach(function (listItem) {
-   listItem.addEventListener("click", function (event) {
+   downListSelect.addEventListener("click", function (event) {
       event.stopPropagation();
-      document.querySelector(".down-list__select").textContent = this.textContent;
-      document.querySelector(".down-list__select").focus();
-      document.querySelector(".down-list__select").classList.remove("down-list__select--active");
-      document.querySelector(".down-list__items").classList.remove("down-list__items--active");
-      document.querySelector(".down-list__input").value = this.dataset.value;
+      downListItems.classList.toggle("down-list__items--active");
+      downListSelect.classList.toggle("down-list__select--active");
+      document.querySelector(".down-list__arrow").classList.toggle("down-list__arrow--active");
    })
-})
 
-// клик снаружи селекта - закрытие селекта
+   // выбор элемента из спика/ запомнить выбранное значение/ закрыть селект
 
-document.addEventListener("click", function () {
-   console.log("click");
-   document.querySelector(".down-list__items").classList.remove("down-list__items--active");
+   downListItem.forEach(function (listItem) {
+      listItem.addEventListener("click", function (event) {
+         event.stopPropagation();
+         downListSelect.textContent = this.textContent;
+         downListSelect.focus();
+         downListSelect.classList.remove("down-list__select--active");
+         downListItems.classList.remove("down-list__items--active");
+         dowListInput.value = this.dataset.value;
+         dowListArrow.classList.remove("down-list__arrow--active");
+      })
+   })
+
+   // клик снаружи селекта - закрытие селекта
+
+   document.addEventListener("click", function () {
+
+      downListItems.classList.remove("down-list__items--active");
+      downListSelect.classList.remove("down-list__select--active");
+      dowListArrow.classList.remove("down-list__arrow--active");
+
+   })
+
+   // закрытие селекта по Esc и Tab  
+
+   document.addEventListener("keydown", function (event) {
+      if (event.key === "Tab" || event.key === "Escape") {
+         downListItems.classList.remove("down-list__items--active");
+         downListSelect.classList.remove("down-list__select--active");
+         dowListArrow.classList.remove("down-list__arrow--active");
+      }
+   })
 })
