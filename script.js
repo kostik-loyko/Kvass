@@ -48,3 +48,24 @@ document.querySelectorAll(".down-list").forEach(function (downList) {
       }
    })
 })
+
+// -------------------------------скролл
+
+function scrollTo() {
+   window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+   });
+}
+
+window.addEventListener("scroll", function () {
+   if (window.pageYOffset > 1500) {
+      document.querySelector(".scrol").classList.remove("visually-hidden");
+      document.querySelector(".scrol").addEventListener("click", function () {
+         scrollTo();
+      })
+   } else {
+      document.querySelector(".scrol").classList.add("visually-hidden");
+   }
+})

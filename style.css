@@ -8,6 +8,22 @@ ul {
    margin: 0;
    padding: 0;
 }
+.scrol {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 50px;
+   height: 40px;
+   background-image: url("img/arrow-top.png");
+   background-position: top;
+   background-repeat: no-repeat;
+   background-size: cover;
+   z-index: 1;
+   cursor: pointer;
+   opacity: 0.2;
+   border-radius: 50%;
+   background-color: #ffffff;
+}
 .header {
    min-width: 1200px;
    height: 550px;
@@ -133,6 +149,13 @@ ul {
    padding: 16px 20px;
    margin-right: 25px;
 }
+.new-products-button .btn:last-of-type:hover {
+   border-color: #6a3900;
+   background-color: #6a3900;
+}
+.new-products-button .btn:last-of-type:active {
+   color: #9a7f6a;
+}
 .btn {
    color: #834700;
    font-size: 16px;
@@ -140,6 +163,14 @@ ul {
    font-weight: bold;
    text-transform: uppercase;
    text-decoration: none;
+}
+.btn:hover {
+   border-color: #6a3900;
+   color: #6a3900;
+}
+.new-products-button .btn:active {
+   border-color: rgb(106, 57, 0, 0.3);
+   color: rgb(106, 57, 0, 0.3);
 }
 .new-products-button p {
    color: #000000;
@@ -272,7 +303,7 @@ dd {
    text-transform: uppercase;
    font-style: normal;
 }
-.btn {
+.btn-reviews {
    border: 2px solid #a5a097;
    padding: 15px 25px;
    color: rgb(167, 161, 152, 1);
@@ -522,12 +553,6 @@ dd {
    overflow: hidden;
 }
 .checkbox:checked + .check-box {
-   position: absolute;
-   display: inline-block;
-   left: 0;
-   top: 0;
-   width: 35px;
-   height: 35px;
    background-color: #e5b66c;
    background-image: url("img/Check-box.png");
    background-repeat: no-repeat;
